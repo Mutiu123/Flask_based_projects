@@ -1,0 +1,16 @@
+{% if age < 13 %}
+    <h2>{{ name }}, you are a child.</h2>
+    <p>Age Group: 0-12 years</p>
+{% elif age < 18 %}
+    <h2>{{ name }}, you are a teenager.</h2>
+    <p>Age Group: 13-17 years</p>
+{% elif age < 65 %}
+    <h2>{{ name }}, you are an adult.</h2>
+    <p>Age Group: 18-64 years</p>
+{% elif age < 80 %}
+    <h2>{{ name }}, you are a senior.</h2>
+    <p>Age Group: 65-79 years</p>
+{% else %}
+    <h2>{{ name }}, you are an elderly person.</h2>
+    <p>Age Group: 80+ years</p>
+{% endif %}

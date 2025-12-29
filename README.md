@@ -44,7 +44,7 @@ flaskvenv\Scripts\activate
 **Windows (PowerShell):**
 ```powershell
 python -m venv flaskvenv
-.\flaskvenv\Scripts\Activate.ps1
+.\flaskvenv\Scripts\Activate
 ```
 
 **macOS/Linux:**
