@@ -3,7 +3,13 @@ from flask import Flask, render_template
 
 # Get the parent directory path
 template_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'templates'))
-app = Flask(__name__, template_folder=template_dir)
+static_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'static'))
+app = Flask(__name__, template_folder=template_dir, static_folder=static_dir)
+
+@app.route('/home')
+def home():
+    return 'Hello, Flask! Welcome to the Flask Application.'
+
 
 @app.route('/index')
 def index():
@@ -16,4 +22,4 @@ def variables():
 
 @app.route('/condition')
 def condition():
-    return render_template('cond.html', name="Mutiu", age=35)  # Change age to test different groups
+    return render_template('cond.html', name="Mutiu", age=35, data=[{"key": "value1"}, {"key": "value2"}, {"key": "value3"}])  # Change age to test different groups

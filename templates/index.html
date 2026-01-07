@@ -1,3 +1,17 @@
-<h1>Welcome to My Flask App! Testing Template</h1> 
+{% extends 'base.html' %} {# Template Inheritance - Extending base.html #}
 
-<h1>My name is {{ name }} and I am {{ age }} years old.</h1>
+{% block css %}
+	{{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename='othercss.css') }}" />
+{% endblock %}
+
+{% block title %}Index{% endblock %}
+
+{% block body %}
+	{% include 'nav.html' %} {# Including Navigation Bar from nav.html #}
+
+	<h1>Welcome to My Flask App! Testing Template</h1>
+
+	<h1>My name is {{ name }} and I am {{ age }} years old.</h1>
+
+{% endblock %}

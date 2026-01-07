@@ -13,4 +13,8 @@
 {% else %}
     <h2>{{ name }}, you are an elderly person.</h2>
     <p>Age Group: 80+ years</p>
-{% endif %}
+{% endif %} 
+
+{% for item in data %}
+    <h2>{{ item.key }}</h2>
+{% endfor %}
